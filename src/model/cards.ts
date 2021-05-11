@@ -139,23 +139,11 @@ export const defaultCardSets: ICardSet[] = [
                 value: 21
             },
             {
-                identifier: "34",
-                value: 34
-            },
-            {
-                identifier: "55",
-                value: 55
-            },
-            {
-                identifier: "89",
-                value: 89
-            },
-            {
                 identifier: "?",
                 value: null
             },
             {
-                identifier: "☕",
+                identifier: "🍺",
                 value: null
             }
         ]
