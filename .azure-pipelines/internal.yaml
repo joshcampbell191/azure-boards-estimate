@@ -22,10 +22,12 @@ steps:
 
     - script: npm run package-release-internal
 
-    - task: ms-devlabs.vsts-developer-tools-build-tasks.publish-extension-build-task.PublishExtension@1
+    - task: PublishAzureDevOpsExtension@3
       displayName: "Publish Extension"
       inputs:
           connectedServiceName: Marketplace cschleiden
           fileType: vsix
           vsixFile: "cschleiden.estimate-*.vsix"
           updateTasksVersion: false
+
+    
