@@ -27,9 +27,12 @@ steps:
 
     - script: npm run package-release-internal
 
+    
+
     - task: PublishAzureDevOpsExtension@3
       displayName: "Publish Extension"
       inputs:
+          connectTo: 'VsTeam'
           connectedServiceName: Marketplace
           fileType: vsix
           vsixFile: "cschleiden.estimate-*.vsix"
