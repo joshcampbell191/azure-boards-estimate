@@ -4,7 +4,7 @@
     "version": "2.2.3",
     "name": "Estimate",
     "description": "Planning Poker in Azure Boards.",
-    "publisher": "cschleiden",
+    "publisher": "joshuacampbell",
     "scopes": ["vso.project", "vso.work", "vso.work_write"],
     "targets": [
         {
