@@ -13,6 +13,11 @@ trigger:
             - v*-internal
 
 steps:
+    - task: TfxInstaller@3
+      displayName: "Use Node CLI for Azure DevOps"
+      inputs:
+        version: 'v0.9.x'
+
     - task: Npm@1
       displayName: "npm install"
       inputs:
