@@ -42,5 +42,3 @@ steps:
     fileType: vsix
     vsixFile: 'joshuacampbell.estimate-*.vsix'
     updateTasksVersion: false
-
-    
