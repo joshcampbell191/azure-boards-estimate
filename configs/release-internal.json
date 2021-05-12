@@ -1,5 +1,8 @@
 {
+    "id": "estimate-preview",
+    "name": "Estimate PREVIEW",
     "galleryFlags": [
         "Preview"
-    ]
+    ],
+    "public": false
 }
