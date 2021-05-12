@@ -15,19 +15,32 @@ trigger:
             - v*-internal
 
 steps:
-    - task: Npm@1
-      displayName: "npm install"
-      inputs:
-          verbose: false
+- task: TfxInstaller@3
+  displayName: 'Use Node CLI for Azure DevOps (tfx-cli): v0.9.x'
 
-    - script: npm run build
+- task: Npm@1
+  displayName: 'npm install'
+  inputs:
+    verbose: false
 
-    - script: npm run package-release
+- task: Npm@1
+  displayName: 'npm run build'
+  inputs:
+    command: custom
+    verbose: false
+    customCommand: 'run build'
 
-    - task: ms-devlabs.vsts-developer-tools-build-tasks.publish-extension-build-task.PublishExtension@1
-      displayName: "Publish Extension"
-      inputs:
-          connectedServiceName: Marketplace ms-devlabs
-          fileType: vsix
-          vsixFile: "ms-devlabs.estimate-*.vsix"
-          updateTasksVersion: false
+- task: Npm@1
+  displayName: 'npm run package-release-internal'
+  inputs:
+    command: custom
+    verbose: false
+    customCommand: 'run package-release-internal'
+
+- task: PublishAzureDevOpsExtension@3
+  displayName: 'Publish Extension'
+  inputs:
+    connectedServiceName: Marketplace
+    fileType: vsix
+    vsixFile: 'joshuacampbell.estimate-*.vsix'
+    updateTasksVersion: false
