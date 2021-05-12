@@ -31,11 +31,11 @@ steps:
     customCommand: 'run build'
 
 - task: Npm@1
-  displayName: 'npm run package-release-internal'
+  displayName: 'npm run package-release'
   inputs:
     command: custom
     verbose: false
-    customCommand: 'run package-release-internal'
+    customCommand: 'run package-release'
 
 - task: PublishAzureDevOpsExtension@3
   displayName: 'Publish Extension'
