@@ -21,6 +21,19 @@ steps:
   inputs:
     verbose: false
 
+- task: replacetokens@4
+  inputs:
+    targetFiles: '**/signalr.ts'
+    encoding: 'auto'
+    tokenPattern: 'default'
+    writeBOM: true
+    actionOnMissing: 'fail'
+    keepToken: false
+    actionOnNoFiles: 'fail'
+    enableTransforms: false
+    useLegacyPattern: false
+    enableTelemetry: false
+
 - task: Npm@1
   displayName: 'npm run build'
   inputs:
