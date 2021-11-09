@@ -204,6 +204,10 @@ export const defaultCardSets: ICardSet[] = [
             {
                 identifier: "🍺",
                 value: null
+            },
+            {
+                identifier: "🐉",
+                value: null
             }
         ]
     },
